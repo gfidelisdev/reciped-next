@@ -8,7 +8,8 @@ export default function Home() {
   return (
     <>
         <BannerArea />
-        <CardArea />
+        <CardArea title="Receitas" />
+        <CardArea title="Autores" />
     </>
   )
 }

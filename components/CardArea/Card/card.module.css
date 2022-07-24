@@ -1,0 +1,33 @@
+.card-picture {
+    max-width: 150px;
+    max-height: 150px;
+    height: 150px;
+    width: 150px;
+    background-size:cover;
+    background-color: red;
+}
+.card-header {
+
+}
+
+.card-body {
+
+}
+
+.card-footer {
+
+}
+.card-picture-dark {
+
+}
+.card-header-dark {
+
+}
+
+.card-body-dark {
+
+}
+
+.card-footer-dark {
+
+}
