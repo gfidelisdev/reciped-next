@@ -1,13 +1,21 @@
+.card-main {
+    min-width: 150px;
+    width: 18rem;
+    background-color: coral;
+}
+
 .card-picture {
-    max-width: 150px;
-    max-height: 150px;
-    height: 150px;
-    width: 150px;
+    min-width: 150px;
+    min-height: 150px;
+    height: 100%;
+    width: 100%;
     background-size:cover;
-    background-color: red;
+    background-color: gray;
+    overflow: hidden;
+    @apply rounded-t-lg;
 }
 .card-header {
-
+    @apply mx-2;
 }
 
 .card-body {
