@@ -1,7 +1,7 @@
 .card-main {
     min-width: 150px;
     width: 18rem;
-    background-color: coral;
+    background-color: #FDD;
 }
 
 .card-picture {
@@ -15,14 +15,25 @@
     @apply rounded-t-lg;
 }
 .card-header {
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+    color: #222;
     @apply mx-2;
 }
 
 .card-body {
+    margin-left: 1em;
+    margin-top: 0.5em;
+    font-weight: 600;
 
 }
 
 .card-footer {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em ;
+    font-weight: 200;
+    margin-left: 1em;
 
 }
 .card-picture-dark {
