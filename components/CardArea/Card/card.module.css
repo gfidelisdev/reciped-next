@@ -24,6 +24,7 @@
 
 .card-body {
     margin-left: 1em;
+    margin-right: 1em;
     margin-top: 0.5em;
     font-weight: 600;
 
@@ -34,6 +35,7 @@
     margin-bottom: 0.5em ;
     font-weight: 200;
     margin-left: 1em;
+    margin-right: 1em;
 
 }
 .card-picture-dark {

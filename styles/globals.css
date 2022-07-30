@@ -30,15 +30,3 @@ body {
     background: black;
   }
 }
-
-.banner {
-  background-image: url('../public/img/banner.jpg');
-  width: 100vw;
-  height: 80vh;
-  background-size: cover;
-}
-
-.strokeme {
-  color: #dddddd;
-  text-shadow: -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #000, 2px 2px 0 #000;
-}
