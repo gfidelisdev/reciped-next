@@ -6,7 +6,7 @@ let recipe = {
   category: 'Bolos',
   prepTime: '1h45min',
   author: 'Guilherme',
-  rating:'4'
+  rating:'4.4'
 }
 export default function CardArea(props) {
   return (

@@ -1,9 +1,12 @@
 .card-main {
     min-width: 150px;
     width: 18rem;
-    background-color: #FDD;
+    background-color: #FAD;
 }
 
+.card-main > * {
+    color: #222;
+}
 .card-picture {
     min-width: 150px;
     min-height: 150px;
@@ -16,9 +19,8 @@
 }
 .card-header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     font-weight: 900;
-    color: #222;
     @apply mx-2;
 }
 
@@ -36,6 +38,8 @@
     font-weight: 200;
     margin-left: 1em;
     margin-right: 1em;
+    display: flex;
+    justify-content: space-between;
 
 }
 .card-picture-dark {
