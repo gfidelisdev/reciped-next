@@ -5,16 +5,13 @@ function Rating({rating}) {
   useEffect(() => {
     let i=0
     let tmpObjRows = []
-    console.log(`%c ${rating*2}`,'color:green')
-    for (i=1;i<=rating*2;i++){
-      console.log(`%c ${i}`,'color:green')
+    console.log(`%c ${Math.round(rating*2)}`,'color:green')
+    for (i=1;i<=Math.round(rating*2);i++){
       if (i%2==0){
-        console.log(`%c ${i} resto zero`,'color:green')
         
         tmpObjRows.push(<input type="radio" disabled key={`star-${i}`} name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />)
       }
       else {
-        console.log(`%c ${i} resto um`,'color:green')
         tmpObjRows.push(<input type="radio" disabled key={`star-${i}`} name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />)
       }
     }
