@@ -24,22 +24,7 @@ export default function Card({theme, recipe}) {
         </div>
         <hr></hr>
         <div className={`${styles["card-body"]}`}>
-            {recipe.rating}
             <Rating rating={recipe.rating}/>
-
-            {/* <div className="rating rating-lg rating-half">
-                <input readOnly type="radio" name="rating-10" className="rating-hidden" />
-                <input readOnly type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
-                <input readOnly type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
-                <input readOnly type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" checked />
-                <input readOnly type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
-                <input readOnly type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
-                <input readOnly type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
-                <input readOnly type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
-                <input readOnly type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
-                <input readOnly type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
-                <input readOnly type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
-            </div> */}
         </div>
         <hr></hr>
         <div className={`${styles["card-footer"]}`}>
