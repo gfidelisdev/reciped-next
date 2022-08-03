@@ -8,6 +8,7 @@ function getRecipe() {
       let recipeObj = new RecipeController()
       recipeObj.get(1).then(response=>{
         setRecipe(response)
+        console.log(response)
       })
     
       return () => {

@@ -1,0 +1,173 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../database/reciped.sqlite"
+}
+
+model author_list {
+  recipe_id Int
+  author_id Int
+  id        Int @id @unique(map: "sqlite_autoindex_author_list_1") @default(autoincrement())
+}
+
+model authors {
+  id   Int     @id @default(autoincrement())
+  name String?
+}
+
+model categories {
+  id        Int    @id @default(autoincrement())
+  name      String
+  parent_id Int?
+
+  @@index([parent_id], map: "parent_id_index")
+}
+
+model category_list {
+  recipe_id   Int
+  category_id Int
+  id          Int @id @unique(map: "sqlite_autoindex_category_list_1") @default(autoincrement())
+
+  @@index([category_id], map: "cid_index")
+  @@index([recipe_id], map: "rid_index")
+}
+
+model db_info {
+  ver          Float
+  generated_by String?
+  id           Int     @id @unique(map: "sqlite_autoindex_db_info_1") @default(autoincrement())
+}
+
+model ingredient_groups {
+  id   Int     @id @default(autoincrement())
+  name String?
+}
+
+model ingredient_info {
+  ingredient_id Int?
+  property_id   Int?
+  amount        Float?
+  per_units     Int?
+  id            Int    @id @default(autoincrement())
+}
+
+model ingredient_list {
+  id             Int    @id @default(autoincrement())
+  recipe_id      Int?
+  ingredient_id  Int?
+  amount         Float?
+  amount_offset  Float?
+  unit_id        Int?
+  order_index    Int?
+  group_id       Int?
+  substitute_for Int?
+
+  @@index([group_id], map: "gidil_index")
+  @@index([ingredient_id], map: "iidil_index")
+  @@index([recipe_id], map: "ridil_index")
+}
+
+model ingredient_properties {
+  id    Int     @id @default(autoincrement())
+  name  String?
+  units String?
+}
+
+model ingredient_weights {
+  id             Int    @id @default(autoincrement())
+  ingredient_id  Int
+  amount         Float?
+  unit_id        Int?
+  weight         Float?
+  weight_unit_id Int?
+  prep_method_id Int?
+
+  @@index([ingredient_id], map: "weight_iid_index")
+  @@index([unit_id], map: "weight_uid_index")
+  @@index([prep_method_id], map: "weight_pid_index")
+  @@index([weight_unit_id], map: "weight_wid_index")
+}
+
+model ingredients {
+  id   Int     @id @default(autoincrement())
+  name String?
+}
+
+model prep_method_list {
+  ingredient_list_id Int
+  prep_method_id     Int
+  order_index        Int?
+  id                 Int  @id @default(autoincrement())
+
+  @@index([prep_method_id], map: "pid_index")
+  @@index([ingredient_list_id], map: "iid_index")
+}
+
+model prep_methods {
+  id   Int     @id @default(autoincrement())
+  name String?
+}
+
+model rating_criteria {
+  id   Int     @id @default(autoincrement())
+  name String?
+}
+
+model rating_criterion_list {
+  rating_id           Int
+  rating_criterion_id Int?
+  stars               Float?
+  id                  Int    @id @default(autoincrement())
+}
+
+model ratings {
+  id        Int       @id @default(autoincrement())
+  recipe_id Int
+  comment   String?
+  rater     String?
+  created   DateTime?
+}
+
+model recipes {
+  id                  Int       @id @default(autoincrement())
+  title               String?
+  yield_amount        Float?
+  yield_amount_offset Float?
+  yield_type_id       Int?      @default(-1)
+  instructions        String?
+  photo               Bytes?
+  prep_time           DateTime?
+  ctime               DateTime?
+  mtime               DateTime?
+  atime               DateTime?
+}
+
+model unit_list {
+  ingredient_id Int?
+  unit_id       Int?
+  id            Int  @id @default(autoincrement())
+}
+
+model units {
+  id            Int     @id @default(autoincrement())
+  name          String?
+  name_abbrev   String?
+  plural        String?
+  plural_abbrev String?
+  type          Int     @default(0)
+}
+
+model units_conversion {
+  unit1_id Int?
+  unit2_id Int?
+  ratio    Float?
+  id       Int    @id @default(autoincrement())
+}
+
+model yield_types {
+  id   Int     @id @default(autoincrement())
+  name String?
+}
