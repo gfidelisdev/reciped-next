@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:../database/reciped.sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model author_list {
@@ -132,17 +132,17 @@ model ratings {
 }
 
 model recipes {
-  id                  Int       @id @default(autoincrement())
+  id                  Int     @id @default(autoincrement())
   title               String?
   yield_amount        Float?
   yield_amount_offset Float?
-  yield_type_id       Int?      @default(-1)
+  yield_type_id       Int?    @default(-1)
   instructions        String?
   photo               Bytes?
-  prep_time           DateTime?
-  ctime               DateTime?
-  mtime               DateTime?
-  atime               DateTime?
+  prep_time           String?
+  ctime               String?
+  mtime               String?
+  atime               String?
 }
 
 model unit_list {
