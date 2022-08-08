@@ -1,4 +1,5 @@
 import  { PrismaClient } from '@prisma/client'
+import useAxios from '../hooks/useAxios'
 let prisma = null
 if (typeof window === 'undefined') {
     prisma = new PrismaClient()
@@ -11,11 +12,10 @@ export default class RecipeController{
     }
     
     async get(id){
-        console.log(prisma)
-        return await prisma.recipes.findUnique({
-            where:{
-                id
-            }
-        })
+    }
+    
+    async listFeatured(){
+        return useAxios(`/recipes/random/20`, 'get')
+
     }
 }
