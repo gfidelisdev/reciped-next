@@ -1,4 +1,5 @@
 import  { PrismaClient } from '@prisma/client'
+import useAxios from '../hooks/useAxios'
 let prisma = null
 
 import knex from '../database/knex'
@@ -13,5 +14,10 @@ export default class RecipeController{
         return await knex.table(this.table).select().where({
             id
         })
+    }
+    
+    async listFeatured(){
+        return useAxios(`/recipes/random/20`, 'get')
+
     }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-const baseUrl = 'http://localhost:3000/';
+// const baseUrl = 'http://localhost:3000/';
+const baseUrl = 'http://localhost:53001';
 const headers= {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*'
@@ -13,6 +14,7 @@ function useAxios(url, method, options=axiosOptions) {
 
     async function execute(){
         console.log(url)
+        console.log(axiosOptions)
         return await axios(url, axiosOptions)
     }
     if (!(url.startsWith('http://') || url.startsWith('https://'))) {
