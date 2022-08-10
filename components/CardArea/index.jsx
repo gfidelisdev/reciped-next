@@ -11,14 +11,7 @@ let recipe = {
 export default function CardArea({title, items}) {
   const [itemsComp, setItemsComp]=useState([])
   useEffect(() => {
-    if (items){
-
-      setItemsComp(items)
-    }
-    console.log("🚀 ~ file: index.jsx ~ line 15 ~ useEffect ~ items", items)
-    console.log("🚀 ~ file: index.jsx ~ line 16 ~ useEffect ~ itemsComp", itemsComp)
-    return () => {
-    }
+    setItemsComp(items)
   }, [])
   
   
@@ -29,8 +22,8 @@ export default function CardArea({title, items}) {
       </div>
       <div className="flex flex-wrap">
 
-        {itemsComp.map(item=>{
-          <Card recipe={item}/>
+        {items.map(item=>{
+          return <Card key={item.id} recipe={item}/>
         })}
       </div>
     </div>

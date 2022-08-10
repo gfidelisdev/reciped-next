@@ -2,7 +2,7 @@ import  { PrismaClient } from '@prisma/client'
 import useAxios from '../hooks/useAxios'
 let prisma = null
 
-import knex from '../database/knex'
+// import knex from '../database/knex'
 
 export default class RecipeController{
     table = 'recipes'
@@ -11,9 +11,9 @@ export default class RecipeController{
     }
     
     async get(id){
-        return await knex.table(this.table).select().where({
-            id
-        })
+        // return await knex.table(this.table).select().where({
+        //     id
+        // })
     }
     
     async listFeatured(){

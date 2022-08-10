@@ -10,16 +10,14 @@ export default function Home() {
   const [featuredReceitas, setFeaturedReceitas] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    let recipeController = new RecipeController()
-    recipeController.listFeatured()
-    .then(recipes=>{
-      setFeaturedReceitas(recipes.data)
-    })
-    .then(()=>{
+    async function getRecipes(){
+      let recipeController = new RecipeController()
+      let  recipes = await recipeController.listFeatured()
+      recipes = recipes.data
+      setFeaturedReceitas(await recipes)
       setLoading(false)
-    })
-    return () => {
     }
+    getRecipes()
   }, [])
   
   if (loading){
@@ -29,7 +27,7 @@ export default function Home() {
     <>
         <BannerArea />
         <CardArea title="Receitas" items={featuredReceitas} />
-        <CardArea title="Autores" />
+        <CardArea title="Autores" items={[]}/>
     </>
   )
 }
