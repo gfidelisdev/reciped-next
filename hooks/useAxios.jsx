@@ -21,7 +21,6 @@ function useAxios(url, method, options=axiosOptions) {
         url = baseUrl+url
     }
     axiosOptions = {method, ...options, ...axiosOptions}
-    console.log("🚀 ~ file: useAxios.jsx ~ line 22 ~ useAxios ~ axiosOptions", axiosOptions)
 
     return (execute())
     

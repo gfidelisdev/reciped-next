@@ -6,5 +6,5 @@ export default async function handler(req, res){
     const recipeController = new RecipeController()
     const recipe = await recipeController.get(req.query.id)
     console.log(await recipe)
-    return res.json(recipe)
+    return res.json(req.query.id)
 }

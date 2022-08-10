@@ -5,6 +5,7 @@ import styles from './card.module.css'
 const nopic = require('../../../defaults/pictures')
 
 export default function Card({theme, recipe}) {
+    console.log("🚀 ~ file: index.jsx ~ line 8 ~ Card ~ recipe", recipe)
     
     let picture = recipe?.picture || nopic.picture
     const [theRating, setTheRating]= useState([])
