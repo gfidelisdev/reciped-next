@@ -1,17 +1,14 @@
 import useAxios from '../hooks/useAxios'
 
-export default class RecipeController{
-    table = 'recipes'
-    constructor(){
-        
-    }
-    
-    async get(id){
-
-    }
-    
-    async listFeatured(){
+const RecipeController = {
+    table: 'recipes',
+    get: async function(id){
+        return useAxios(`/recipe/${id}`)
+    },
+    listFeatured: async function(){
         return useAxios(`/recipes/random/20`, 'get')
 
     }
 }
+
+export default RecipeController
