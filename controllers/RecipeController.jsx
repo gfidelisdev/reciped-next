@@ -1,12 +1,12 @@
-import useAxios from '../hooks/useAxios'
+import runAxios from './../plugins/axios'
 
 const RecipeController = {
     table: 'recipes',
     get: async function(id){
-        return useAxios(`/recipe/${id}`)
+        return runAxios(`/recipe/${id}`)
     },
     listFeatured: async function(){
-        return useAxios(`/recipes/random/20`, 'get')
+        return runAxios(`/recipes/random/20`, 'get')
 
     }
 }

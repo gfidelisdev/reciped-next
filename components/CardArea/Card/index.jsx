@@ -29,7 +29,7 @@ export default function Card({theme, recipe}) {
         </div>
         <hr></hr>
         <div className={`${styles["card-footer"]}`}>
-            <div>{recipe.prepTime}</div>
+            <div>{recipe.prep_time}</div>
             <div className={`font-semibold italic`}>{recipe.author}</div>
         </div>
     </div>

@@ -11,8 +11,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     async function getRecipes(){
-      let recipeController = new RecipeController()
-      let  recipes = await recipeController.listFeatured()
+      let  recipes = await RecipeController.listFeatured()
       recipes = recipes.data
       setFeaturedReceitas(await recipes)
       setLoading(false)
