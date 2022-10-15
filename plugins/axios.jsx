@@ -7,7 +7,7 @@ const headers= {
 let axiosOptions = {
     headers
 };
-function runAxios(url, method, options=axiosOptions) {
+function runAxios(url, method='get', options=axiosOptions) {
     async function execute(){
         return await axios(url, axiosOptions)
     }

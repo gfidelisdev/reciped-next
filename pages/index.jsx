@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import BannerArea from '../components/BannerArea'
 import CardArea from '../components/CardArea'
+import FilterArea from '../components/FilterArea'
 import RecipeController from '../controllers/RecipeController'
 import styles from '../styles/Home.module.css'
 
@@ -24,6 +25,7 @@ export default function Home() {
   }
   return (
     <>
+        <FilterArea />
         <BannerArea />
         <CardArea title="Receitas" items={featuredReceitas} />
         <CardArea title="Autores" items={[]}/>

@@ -20,7 +20,7 @@ export default function CardArea({title, items}) {
       <div className="flex flex-wrap justify-center">
         <h1 className="text-4xl">{title}</h1>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-between">
 
         {items.map(item=>{
           return <Card key={item.id} recipe={item}/>
