@@ -6,11 +6,11 @@ import useAxios from '../../hooks/useAxios'
 function getRecipe() {
 
     const [recipes, setRecipes] = useState([])
-    async function getRecipe(id){
+    async function getRecipeById(id){
       return await useAxios(`/api/recipes/${id}`, 'get')
     }
     useEffect(() => {
-      getRecipe(1).then(response=>{
+      getRecipeById(1).then(response=>{
         console.log(`%c`,"color:red", response)
         setRecipes(response.data)
 
