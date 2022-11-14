@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Rating from '../../Rating'
 import styles from './card.module.css'
 
 const nopic = require('../../../defaults/pictures')
 
 export default function Card({theme, recipe}) {
+    const router = useRouter()
     console.log("🚀 ~ file: index.jsx ~ line 8 ~ Card ~ recipe", recipe)
     
     let picture = recipe?.picture || nopic.picture
     const [theRating, setTheRating]= useState([])
     
+    function handleChangeRecipe(){
+        router.push(`recipe/${recipe.id}`);
+    }
   return (
-    <div className={`flex flex-col m-3 rounded-lg shadow-2xl drop-shadow-2xl hover:scale-110 bg-slate-600 ${styles["card-main"]}`}>
+    <div className={`flex flex-col m-3 rounded-lg shadow-2xl drop-shadow-2xl hover:scale-110 bg-slate-600 ${styles["card-main"]}`} onClick={handleChangeRecipe}>
         <div className={`${styles["card-picture"]}`}>
             <img src={picture} alt=""  />
         </div>
