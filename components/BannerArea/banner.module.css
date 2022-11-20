@@ -1,7 +1,7 @@
 
 .banner {
     background-image: url('../../public/img/banner.jpg');
-    width: 100vw;
+    width: 99vw;
     height: 80vh;
     background-size: cover;
   }

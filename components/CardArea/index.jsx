@@ -20,12 +20,7 @@ export default function CardArea({title, items}) {
       <div className="flex flex-wrap justify-center">
         <h1 className="text-4xl">{title}</h1>
       </div>
-<<<<<<< Updated upstream
-      <div className="flex flex-wrap justify-between">
-=======
       <div className="flex flex-wrap justify-around">
->>>>>>> Stashed changes
-
         {items.map(item=>{
           return <Card key={item.id} recipe={item}/>
         })}
